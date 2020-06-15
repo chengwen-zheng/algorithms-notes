@@ -1,5 +1,8 @@
 package chapter1_fundamentals;
 
+import StdLib.StdIn;
+import StdLib.StdOut;
+
 /**
  * P138 union-find的实现
  *
@@ -89,16 +92,20 @@ public class UF {
     }
 
     public static void main(String[] args) {
-        UF uf = new UF(10);
-        for (int i = 0; i < args.length; i += 2) {
-            int p = Integer.parseInt(args[i]);
-            int q = Integer.parseInt(args[i + 1]);
-            if (uf.connected(p, q)) {
-                continue;
-            }
+        int N = StdIn.readInt();
+        WeightedQuickUnionUF uf = new WeightedQuickUnionUF(N);
+
+        // read in a sequence of pairs of integers (each in the range 0 to N-1),
+        // calling find() for each pair: If the members of the pair are not already
+        // call union() and print the pair.
+        while (!StdIn.isEmpty()) {
+            int p = StdIn.readInt();
+            int q = StdIn.readInt();
+            if (uf.connected(p, q)) continue;
             uf.union(p, q);
+            StdOut.println(p + " " + q);
         }
-        System.out.println(uf.count() + " components");// 2
+        StdOut.println("# components: " + uf.count());
     }
 
 }
