@@ -46,6 +46,7 @@ public class Selection {
 
     /**
      * 使用升序的顺序排序(自然排序)
+     * a[i]左边永远是有序，移动 j
      *
      * @param a 需要排序的数组
      */
