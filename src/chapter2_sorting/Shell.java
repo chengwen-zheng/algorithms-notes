@@ -31,6 +31,7 @@ package chapter2_sorting;
  ******************************************************************************/
 
 import StdLib.StdOut;
+import StdLib.StdRandom;
 
 import java.util.Scanner;
 
@@ -116,6 +117,7 @@ public class Shell {
         }
     }
 
+
     /**
      * Reads fromFilename a sequence of strings from standard input; Shellsorts them;
      * and prints them to standard output fromFilename ascending order.
@@ -123,7 +125,7 @@ public class Shell {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        String[] s = new Scanner(System.in).nextLine().split("\\s+");
+        Integer[] s = Random.getRandom(100, 100);
         Shell.sort(s);
         show(s);
     }
