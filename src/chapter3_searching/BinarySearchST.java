@@ -50,6 +50,12 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
 
     public void put(Key key, Value val) {
         int i = rank(key);
+        // 在put方法中，i代表的是要插入元素的位置，即当前键值对在键数组中的索引。当i < N时，表示要插入的键在已有的键的范围内，所以可以直接将
+        // 对应位置的vals[i]赋值为新的值val。
+        // 这是因为在put方法中，首先会通过rank方法找到要插入的位置i。如果i小于当前键值对的数量N，意味着键数组中已经存在相同的键，此时只需要
+        // 更新对应位置的值即可，而不需要插入新的键值对。
+        // 对于i > N的情况，这意味着要插入的键超出了当前键值对的范围，需要将新的键值对添加到键数组的末尾，并增加键值对的数量N。
+        // 所以，在put方法中，i < N时表示更新已有键值对，而i > N时表示添加新的键值对。
         if (i < N && keys[i].compareTo(key) == 0) {
             vals[i] = val;
             return;
