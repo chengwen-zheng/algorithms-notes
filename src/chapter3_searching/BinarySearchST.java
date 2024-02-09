@@ -34,6 +34,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
 
     public int rank(Key key) {
         int lo = 0, hi = N - 1;
+        // 二分查找
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             int cmp = key.compareTo(keys[mid]);

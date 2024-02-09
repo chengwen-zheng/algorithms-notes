@@ -4,4 +4,6 @@
 3. 普通的符号表设计，[见代码](https://github.com/chengwen-zheng/algorithms-notes/blob/master/src/StdLib/ST.java)
     [ST test](https://github.com/chengwen-zheng/algorithms-notes/blob/master/src/chapter3_searching/FrequencyCounter.java)
 4. 键的等价性。java中维护所有的Comparable类型中compareTo方法和equals()方法的一致性。即a.compareTo(b) == 0和 a.equals(b)相等。
-5. 有序的符号表设计，[见代码](https://github.com/chengwen-zheng/algorithms-notes/blob/master/src/chapter3_searching/BinarySearchST.java)
+5. 有序的符号表设计，[见代码](https://github.com/chengwen-zheng/algorithms-notes/blob/master/src/chapter3_searching/ArrayST.java)
+6. 无序的符号表设计，[见代码](https://github.com/chengwen-zheng/algorithms-notes/blob/master/src/chapter3_searching/SequentialSearchST.java)
+7. 基于有序数组的二分查找符号表，[见代码](https://github.com/chengwen-zheng/algorithms-notes/blob/master/src/chapter3_searching/BinarySearchST.java)
