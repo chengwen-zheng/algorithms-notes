@@ -10,13 +10,13 @@ public class FrequencyCounter {
     public static void main(String[] args) {
         // 命令行参数表示了表中键的最短长度
         int minLen = Integer.parseInt(args[0]);
-        ST<String, Integer> st = new ST<>();
+        SequentialSearchST<String, Integer> st = new SequentialSearchST<>();
         while (!StdIn.isEmpty()) {
             String word = StdIn.readString();
             if (word.length() < minLen) {
                 continue;
             }
-            if (!st.contains(word)) {
+            if (st.get(word) == null) {
                 st.put(word, 1);
             } else {
                 st.put(word, st.get(word) + 1);
