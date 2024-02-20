@@ -1,4 +1,5 @@
 package chapter3_searching;
+
 import chapter1_fundamentals.Queue;
 
 public class BST<Key extends Comparable<Key>, Value> {
@@ -95,8 +96,8 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-    ===============>delete<====================
-    * */
+     * ===============>delete<====================
+     */
 
     public void deleteMin() {
         root = deleteMin(root);
@@ -271,6 +272,18 @@ public class BST<Key extends Comparable<Key>, Value> {
         }
     }
 
+
+    // Exercise 3.2.6
+    public int height() {
+        return height(root);
+    }
+
+    public int height(Node x) {
+        if (x == null) {
+            return -1;
+        }
+        return 1 + Math.max(height(x.left), height(x.right));
+    }
 
 
 }
