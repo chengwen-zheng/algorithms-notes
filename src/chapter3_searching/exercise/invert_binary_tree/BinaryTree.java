@@ -1,7 +1,7 @@
 package chapter3_searching.exercise.invert_binary_tree;
 
 
-public class InvertBinaryTree {
+public class BinaryTree {
     private TreeNode root;
 
     public class TreeNode {
@@ -27,6 +27,18 @@ public class InvertBinaryTree {
         t = invertTree(x.left);
         x.left = invertTree(x.right);
         x.right = t;
+        return x;
+    }
+
+    public TreeNode pruneTree(TreeNode x) {
+        if (x == null) return null;
+
+        x.left = pruneTree(x.left);
+        x.right = pruneTree(x.right);
+        if (x.left == null && x.right == null && x.val == 0) {
+            return null;
+        }
+
         return x;
     }
 
