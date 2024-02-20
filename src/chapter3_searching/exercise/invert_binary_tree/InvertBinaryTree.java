@@ -22,9 +22,7 @@ public class InvertBinaryTree {
 
     public TreeNode invertTree(TreeNode x) {
         if (x == null) return null;
-        if (x.left == null || x.right == null) {
-            return null;
-        }
+
         TreeNode t = null;
         t = invertTree(x.left);
         x.left = invertTree(x.right);
