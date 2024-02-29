@@ -1,6 +1,8 @@
 package chapter3_searching.exercise.binary_tree;
 
 
+import java.util.Arrays;
+
 public class BinaryTree {
     private TreeNode root;
 
@@ -46,5 +48,30 @@ public class BinaryTree {
         if (root == null) return 0;
         return 1 + Math.max(calculateDepth(root.left), calculateDepth(root.right));
     }
+
+
+    public TreeNode deduceTree(int[] preorder, int[] inorder) {
+        // 计算出root元素
+        int root = preorder[0];
+        int rootIndex = 0;
+        for (int i = 0; i < inorder.length; i++) {
+            if(inorder[i] == root){
+                rootIndex = i;
+                break;
+            }
+        }
+        int[] subLeft = Arrays.copyOfRange(inorder, 0, rootIndex);
+        int[] right = Arrays.copyOfRange(inorder, rootIndex, inorder.length-1);
+
+
+        int subLeftLen = subLeft.length;
+
+
+
+    }
+
+
+
+
 
 }
