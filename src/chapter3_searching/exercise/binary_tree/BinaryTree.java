@@ -1,4 +1,4 @@
-package chapter3_searching.exercise.invert_binary_tree;
+package chapter3_searching.exercise.binary_tree;
 
 
 public class BinaryTree {
@@ -40,6 +40,11 @@ public class BinaryTree {
         }
 
         return x;
+    }
+
+    public int calculateDepth(TreeNode root) {
+        if (root == null) return 0;
+        return 1 + Math.max(calculateDepth(root.left), calculateDepth(root.right));
     }
 
 }
