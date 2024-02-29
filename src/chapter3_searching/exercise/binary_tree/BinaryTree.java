@@ -52,13 +52,13 @@ public class BinaryTree {
 
     public TreeNode deduceTree(int[] preorder, int[] inorder) {
         // 计算出root元素
-        if (preorder.length == 0) return  null;
-        if(inorder.length == 0) return null;
-        if(preorder.length != inorder.length) return null;
+        if (preorder.length == 0) return null;
+        if (inorder.length == 0) return null;
+        if (preorder.length != inorder.length) return null;
         int root = preorder[0];
         int rootIndex = 0;
         for (int i = 0; i < inorder.length; i++) {
-            if(inorder[i] == root){
+            if (inorder[i] == root) {
                 rootIndex = i;
                 break;
             }
@@ -67,13 +67,12 @@ public class BinaryTree {
         TreeNode right;
 
         int[] inorderSubLeft = Arrays.copyOfRange(inorder, 0, rootIndex);
-        int[] inorderSubRight = Arrays.copyOfRange(inorder, rootIndex+1, inorder.length);
+        int[] inorderSubRight = Arrays.copyOfRange(inorder, rootIndex + 1, inorder.length);
 
 
+        int[] preorderSubLeft = Arrays.copyOfRange(preorder, 1, rootIndex + 1);
 
-        int[] preorderSubLeft = Arrays.copyOfRange(preorder, 1, rootIndex+1);
-
-        int[] preorderSubRight = Arrays.copyOfRange(preorder,  rootIndex+1, preorder.length);
+        int[] preorderSubRight = Arrays.copyOfRange(preorder, rootIndex + 1, preorder.length);
 
         right = deduceTree(preorderSubRight, inorderSubRight);
         left = deduceTree(preorderSubLeft, inorderSubLeft);
@@ -81,9 +80,6 @@ public class BinaryTree {
 
         return new TreeNode(root, left, right);
     }
-
-
-
 
 
 }
