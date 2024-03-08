@@ -134,7 +134,6 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
             q.enqueue(keys[i]);
         }
         if (contains(hi)) {
-            q.enqueue(keys[rank(hi)]);
         }
         return q;
     }

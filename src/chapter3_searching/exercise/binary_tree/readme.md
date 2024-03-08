@@ -10,3 +10,7 @@
 4. 某二叉树的先序遍历结果记录于整数数组 preorder，它的中序遍历结果记录于整数数组 inorder。请根据 preorder 和 inorder 的
    提示构造出这棵二叉树并返回其根节点：https://leetcode.cn/problems/zhong-jian-er-cha-shu-lcof/description/
    代码在 BinaryTree.deduceTree
+5. 给你二叉树的根节点 root ，返回其节点值的 层序遍历 。 （即逐层地，从左到右访问所有节点）。
+      https://leetcode.cn/problems/binary-tree-level-order-traversal/description/ 
+   代码在BinaryTree.levelOrder
+   
